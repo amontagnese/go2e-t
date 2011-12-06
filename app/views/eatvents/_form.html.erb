@@ -1,0 +1,53 @@
+<script>
+	$(document).ready(function() {
+	});
+</script>
+
+
+
+<%= form_for(@eatvent) do |f| %>
+  <% if @eatvent.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@eatvent.errors.count, "error") %> prohibited this eatvent from being saved:</h2>
+
+      <ul>
+      <% @eatvent.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :creator %><br />
+	<% User.all.each do |user| %>	
+		<%=		radio_button_tag 'eatvent[creator]', user.name %>    
+		<%=		 user.name %>    
+	<% end %>  </div>
+  <div class="field">
+    <%= f.label :day %><br />
+    <%= f.date_select :day %>
+  </div>
+  <div class="field">
+    <%= f.label :hour %><br />
+    <%= f.time_select :hour %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+  	<%=select_tag 'eatvent[where]',options_for_select(Place.find(:all).collect{|p| [p.name]}) %>    
+  	<%= link_to 'New Place', newplace_path %>
+  </div>
+  
+<div class="field">
+    <%= f.label :people %><br />
+	
+	<% User.all.each do |user| %>	
+		<%=		check_box_tag 'eatvent[people][]', user.name %>    
+		<%=		 user.name %>    
+	<% end %>
+
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

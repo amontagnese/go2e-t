@@ -1,0 +1,29 @@
+<h1>Listing eatvents</h1>
+
+<table>
+  <tr>
+    <th>Creator</th>
+    <th>Day</th>
+    <th>Hour</th>
+    <th>People</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @eatvents.each do |eatvent| %>
+  <tr>
+    <td><%= eatvent.creator %></td>
+    <td><%= eatvent.day %></td>
+    <td><%= eatvent.hour %></td>
+    <td><%= eatvent.people %></td>
+    <td><%= link_to 'Show', eatvent %></td>
+    <td><%= link_to 'Edit', edit_eatvent_path(eatvent) %></td>
+    <td><%= link_to 'Destroy', eatvent, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Eatvent', new_eatvent_path %>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Creator:</b>
+  <%= @eatvent.creator %>
+</p>
+
+<p>
+  <b>Day:</b>
+  <%= @eatvent.day %>
+</p>
+
+<p>
+  <b>Hour:</b>
+  <%= @eatvent.hour %>
+</p>
+
+<p>
+  <b>Where:</b>
+  <%= @eatvent.where %>
+</p>
+
+<p>
+  <b>People:</b>
+  <%= @eatvent.people %>
+</p>
+
+
+<%= link_to 'Edit', edit_eatvent_path(@eatvent) %> |
+<%= link_to 'Back', eatvents_path %>
