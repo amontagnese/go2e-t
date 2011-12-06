@@ -8,6 +8,7 @@
 <table width="100%">
   <tr>
     <th>Creator</th>
+    <th>Place</th>
     <th>Day</th>
     <th>Hour</th>
     <th>People</th>
@@ -19,6 +20,7 @@
 <% @eatvents.each do |eatvent| %>
   <tr>
     <td><%= eatvent.creator %></td>
+    <td><%= eatvent.where %></td>
     <td><%= eatvent.day %></td>
     <td><%= eatvent.hour %></td>
     <td><%= eatvent.people %></td>

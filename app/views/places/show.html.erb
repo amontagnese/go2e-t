@@ -1,5 +1,5 @@
 <div data-role="header" data-theme="b">
-	<h1>Place</h1>
+	<h1><%= @place.name %></h1>
 	<a href="../../" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a>
 </div><!-- /header -->
 
@@ -8,11 +8,10 @@
 
 <p>
   <b>Name:</b>
-  <span id="Name" value='<%=@place.name%>'><%= @place.name %>
+  <%= @place.name %>
 </p>
 <p>
   <b>Address:</b>
-  <span id="Address" value='<%= @place.address %>'>
   <%= @place.address %>
 </p>
 <p>
@@ -38,13 +37,19 @@
   <%= @place.hours %>
 </p>
  -->
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+ 
+<!-- Hidden field for Google Maps Address  -->
+
+<% mapAddress = (@place.address).chomp + " " + (@place.name) %>
+<span id="MapAddress" value='<%= mapAddress %>' ></span>
+ 
 <script type="text/javascript">
 
 
   var geocoder;
   var map;
   function initialize() {
+  	
     geocoder = new google.maps.Geocoder();
     var latlng = new google.maps.LatLng(-34.397, 150.644);
     
@@ -53,8 +58,9 @@
       center: latlng,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
+    
     map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-  	 var address = $('#Name').attr("value") + " " + $('#Address').attr("value") + " san francisco"
+  	 var address = $('#MapAddress').attr("value") + " san francisco"
 	    geocoder.geocode( { 'address': address}, function(results, status) {
 	      if (status == google.maps.GeocoderStatus.OK) {
 	        map.setCenter(results[0].geometry.location);
