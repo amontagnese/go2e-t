@@ -11,19 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
+<div data-role="fieldcontain">
+    <%= label_tag "user_name" %>
     <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :login %><br />
+    <%= label_tag "user_email" %>    
+	<%= f.text_field :email %>
+    <%= label_tag "user_login" %>
     <%= f.text_field :login %>
-  </div>
-  <div class="actions">
     <%= f.submit %>
-  </div>
+</div>
 <% end %>

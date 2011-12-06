@@ -1,6 +1,12 @@
-<h1>Editing user</h1>
+<div data-role="header" data-theme="b">
+	<h1>Edit User</h1>
+	<a href="../../" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a>
+</div><!-- /header -->
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @user %> |
+
+<div data-role="footer" class="ui-bar" data-theme="b">
+<%= link_to 'Show', @user %> 
 <%= link_to 'Back', users_path %>
+</div>

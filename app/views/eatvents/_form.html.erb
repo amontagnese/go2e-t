@@ -1,9 +1,3 @@
-<script>
-	$(document).ready(function() {
-	});
-</script>
-
-
 
 <%= form_for(@eatvent) do |f| %>
   <% if @eatvent.errors.any? %>
@@ -18,36 +12,58 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :creator %><br />
-	<% User.all.each do |user| %>	
-		<%=		radio_button_tag 'eatvent[creator]', user.name %>    
-		<%=		 user.name %>    
-	<% end %>  </div>
-  <div class="field">
-    <%= f.label :day %><br />
-    <%= f.date_select :day %>
-  </div>
-  <div class="field">
-    <%= f.label :hour %><br />
-    <%= f.time_select :hour %>
-  </div>
-  <div class="field">
-    <%= f.label :name %><br />
-  	<%=select_tag 'eatvent[where]',options_for_select(Place.find(:all).collect{|p| [p.name]}) %>    
-  	<%= link_to 'New Place', newplace_path %>
-  </div>
-  
-<div class="field">
-    <%= f.label :people %><br />
-	
-	<% User.all.each do |user| %>	
-		<%=		check_box_tag 'eatvent[people][]', user.name %>    
-		<%=		 user.name %>    
-	<% end %>
+	<fieldset data-role="controlgroup" data-type="horizontal" data-role="fieldcontain">
+		<legend>Creator:</legend>
+		<div data-role="fieldcontain" style="position:relative; left:22%">
+			<% User.all.each do |user| %>	
+			<%=	radio_button_tag 'eatvent[creator]', user.name %>    
+			<%= label_tag ("eatvent_creator_"+user.name), user.name %>
+			<% end %>  
+		</div>
+	</fieldset>
+	<div data-role="fieldcontain">
+		<fieldset data-role="controlgroup" data-type="horizontal" >
+		  <legend>Day:</legend>   
+    	  <%= f.date_select :day %>
+		</fieldset>
+  	</div>
+	<div data-role="fieldcontain">
+	  <fieldset data-role="controlgroup" data-type="horizontal" >
+	   	<legend>Hour:</legend>
+	    <%= f.time_select :hour %>
+	  </fieldset>
+  	</div>
 
-  </div>
-  <div class="actions">
+	<div class="ui-grid-a">
+		<div class="ui-block-a">
+	<div data-role="fieldcontain">
+		<fieldset data-role="controlgroup" data-type="horizontal">
+	    	<legend>Name:</legend>  
+			<div  style="position:relative; left:37%">
+			<%=select_tag 'eatvent[where]',options_for_select(Place.find(:all).collect{|p| [p.name]}) %>    
+			</div>
+		</fieldset>
+	</div>
+	</div>
+
+		<div class="ui-block-b">	
+	<div data-role="button" data-icon="plus"   style="position:relative; left:-10%; down:-50%">
+		
+		<%= link_to 'New Place', newplace_path %>  
+
+	</div>	</div>	</div>
+	<br/>
+
+	<legend>People:</legend>	
+	<% User.all.each do |user| %>	
+	<div data-role="fieldcontain">
+	 	<fieldset data-role="controlgroup"  style="width:20%; position:relative; left:22%" >
+			<%=		check_box_tag 'eatvent[people][]', user.name %>    
+			<%=label_tag ("eatvent_people_"), user.name %>
+	    </fieldset>
+	</div>
+	<% end %>
+  	
     <%= f.submit %>
-  </div>
+  	
 <% end %>

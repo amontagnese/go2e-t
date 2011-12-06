@@ -1,3 +1,8 @@
+<div data-role="header" data-theme="b">
+	<h1>User</h1>
+	<a href="../../" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a>
+</div><!-- /header -->
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -16,5 +21,7 @@
 </p>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<div data-role="footer" class="ui-bar" data-theme="b">
+<%= link_to 'Edit', edit_user_path(@user) %> 
 <%= link_to 'Back', users_path %>
+</div>

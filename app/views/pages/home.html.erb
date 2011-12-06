@@ -1,5 +1,13 @@
-<h1>Home</h1>
-<ul>
+<div data-role="page">
+
+	<div data-role="header" data-theme="b">
+		<h1>--------    GO2E@T    --------</h1>
+		<a href="../../" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a>
+	</div><!-- /header -->
+	<div data-role="content">
+
+<ul data-role="listview" data-inset="true">
+
 	
 	<li><%= link_to "Create eatvent", neweatvent_path %></li>
 	<li><%= link_to "See eatvents", eatvents_path %></li>
@@ -8,3 +16,15 @@
 
 
 </ul>
+
+	</div><!-- /content -->
+
+
+	<div data-role="footer" class="ui-bar" data-theme="b">
+	
+	<div>
+
+</div><!-- /page -->
+
+
+

@@ -1,7 +1,19 @@
-<h1>New place</h1>
+<div data-role="header" data-theme="b">
+	<h1>New Place</h1>
+	<a href="../../" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a>
+</div><!-- /header -->
 
 <%= render 'form' %>
 
-<%= link_to 'Back to Places', places_path %>
-<%= link_to 'Back to Create Eatvent', neweatvent_path %>
+
+<div data-role="footer" class="ui-bar" data-theme="b">
+
+	<%= link_to 'Back to Places', places_path %>
+	<%= link_to 'Back to Create Eatvent', neweatvent_path %>
+
+	<!-- <a href="index.html" data-role="button" data-icon="arrow-l">Down</a> -->
+</div>
+
+
+
 

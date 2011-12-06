@@ -1,3 +1,8 @@
+<div data-role="header" data-theme="b">
+	<h1>Eatvent</h1>
+	<a href="../../" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a>
+</div><!-- /header -->
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -25,6 +30,7 @@
   <%= @eatvent.people %>
 </p>
 
-
-<%= link_to 'Edit', edit_eatvent_path(@eatvent) %> |
+<div data-role="footer" class="ui-bar" data-theme="b">
+<%= link_to 'Edit', edit_eatvent_path(@eatvent) %> 
 <%= link_to 'Back', eatvents_path %>
+</div>

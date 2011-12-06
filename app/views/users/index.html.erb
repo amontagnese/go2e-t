@@ -1,6 +1,10 @@
-<h1>Listing users</h1>
+<div data-role="header" data-theme="b">
+	<h1>Users</h1>
+	<a href="../../" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a>
+</div><!-- /header -->
 
-<table>
+
+<table width="100%">
   <tr>
     <th>Name</th>
     <th>Email</th>
@@ -24,4 +28,7 @@
 
 <br />
 
+
+<div data-role="footer" class="ui-bar" data-theme="b">
 <%= link_to 'New User', new_user_path %>
+</div>

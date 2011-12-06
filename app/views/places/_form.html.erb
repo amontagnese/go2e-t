@@ -11,35 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
+<div data-role="fieldcontain">
+    <%= label_tag "place_name" %>
     <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :address %><br />
+
+    <%= label_tag "place_address" %>
     <%= f.text_field :address %>
-  </div>
-  <div class="field">
-    <%= f.label :website %><br />
+
+    <%= label_tag "place_website" %>
     <%= f.text_field :website %>
-  </div>
-  <div class="field">
-    <%= f.label :tel %><br />
+
+    <%= label_tag "place_menu" %>
+    <%= f.text_field :menu %>
+
+    <%= label_tag "place_tel" %>
     <%= f.text_field :tel %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br />
+
+    <%= label_tag "place_price" %>
     <%= f.text_field :price %>
-  </div>
-  <div class="field">
-    <%= f.label :days %><br />
+
+    <%= label_tag "place_days" %>
     <%= f.text_field :days %>
-  </div>
-  <div class="field">
-    <%= f.label :hours %><br />
+
+    <%= label_tag "place_hours" %>
     <%= f.text_field :hours %>
-  </div>
-  <div class="actions">
+
     <%= f.submit %>
-  </div>
+
+</div>
 <% end %>

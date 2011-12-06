@@ -1,6 +1,16 @@
-<h1>Editing place</h1>
+<div data-role="header" data-theme="b">
+	<h1>Edit Place</h1>
+	<a href="../../" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a>
+</div><!-- /header -->
+
+
+
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @place %> |
+<div data-role="footer" class="ui-bar" data-theme="b">
+
+<%= link_to 'Show', @place %> 
 <%= link_to 'Back', places_path %>
+
+</div>

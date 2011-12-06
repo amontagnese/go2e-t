@@ -1,30 +1,28 @@
-
+<div data-role="header" data-theme="b">
+	<h1>Place</h1>
+	<a href="../../" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a>
+</div><!-- /header -->
 
 
 <p id="notice"><%= notice %></p>
 
 <p>
   <b>Name:</b>
-  <span id="Name" value='<%=@place.name%>'><%= @place.name %></div>
+  <span id="Name" value='<%=@place.name%>'><%= @place.name %>
 </p>
-
-<p >
+<p>
   <b>Address:</b>
-  <span id="Address" value='<%= @place.address %>'><%= @place.address %></div>
+  <span id="Address" value='<%= @place.address %>'>
   <%= @place.address %>
-</div>
 </p>
-
 <p>
   <b>Website:</b>
   <%= @place.website %>
 </p>
-
 <p>
   <b>Tel:</b>
   <%= @place.tel %>
 </p>
-
 <!-- <p>
   <b>Price:</b>
   <%= @place.price %>
@@ -40,8 +38,6 @@
   <%= @place.hours %>
 </p>
  -->
-
-
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">
 
@@ -53,7 +49,7 @@
     var latlng = new google.maps.LatLng(-34.397, 150.644);
     
 	var myOptions = {
-      zoom: 18,
+      zoom: 16,
       center: latlng,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     }
@@ -81,8 +77,8 @@
 <body onload='initialize()'>	<div id='map_canvas' style='width: 400px; height: 300px; ' ></div> </body>
 
 
-
-
-<%= link_to 'Edit', edit_place_path(@place) %> |
-<%= link_to 'Back to places', places_path %>
-<%= link_to 'Back to Create Eatvent', neweatvent_path %>
+<div data-role="footer" class="ui-bar" data-theme="b">
+	<%= link_to 'Edit', edit_place_path(@place) %> 
+	<%= link_to 'Back to places', places_path %>
+	<%= link_to 'Back to Create Eatvent', neweatvent_path %>
+</div>
