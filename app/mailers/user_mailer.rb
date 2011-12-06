@@ -2,10 +2,10 @@ class UserMailer < ActionMailer::Base
   default :from => "amontagnese@grio.com"
   
  
-  def eatvent_email(email, eatvent)
+  def eatvent_email(email, eatvent, subjet)
     # puts "sending messages"
     @eatvent = eatvent
-    mail(:to => email, :subject => "You're invited to a new Eatvent!!", :body => "\n-Creator: " + eatvent.creator + " \n-Where: " + eatvent.where + "\n-When: " + eatvent.day.to_s + eatvent.hour.to_s + "\n-Who: " + eatvent.people )
+    mail(:to => email, :subject => subject, :body => "\n-Creator: " + eatvent.creator + " \n-Where: " + eatvent.where + "\n-When: " + eatvent.day.to_s + eatvent.hour.to_s + "\n-Who: " + eatvent.people )
   end
 
   def test_email

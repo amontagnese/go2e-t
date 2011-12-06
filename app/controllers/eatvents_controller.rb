@@ -48,7 +48,7 @@ class EatventsController < ApplicationController
     @eatvent.people = participantArr.join(",")
     participantArr.each {|name| 
       tempemail = User.where(:name => name).first.email 
-      UserMailer.eatvent_email(tempemail,@eatvent).deliver
+      UserMailer.eatvent_email(tempemail,@eatvent,"You're invited to a new Eatvent!!").deliver
     }
     
     respond_to do |format|
@@ -66,6 +66,13 @@ class EatventsController < ApplicationController
   # PUT /eatvents/1.json
   def update
     @eatvent = Eatvent.find(params[:id])
+
+    participantArr = @eatvent.people
+    @eatvent.people = participantArr.join(",")
+    participantArr.each {|name| 
+      tempemail = User.where(:name => name).first.email 
+      UserMailer.eatvent_email(tempemail,@eatvent,"The Eatvent has been modified").deliver
+    }
 
     respond_to do |format|
       if @eatvent.update_attributes(params[:eatvent])
