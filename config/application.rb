@@ -64,8 +64,8 @@ module Go2eT
       :address              => "smtp.gmail.com",
       :port                 => 587,
       :domain               => 'gmail.com',
-      :user_name            => 'amontagnese@grio.com',
-      :password             => 'rrkkv667',
+      :user_name            => 'gotooeat@gmail.com',
+      :password             => 'caffetiramisu',
       :authentication       => 'plain',
       :enable_starttls_auto => true  }
       
