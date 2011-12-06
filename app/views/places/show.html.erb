@@ -22,21 +22,7 @@
   <b>Tel:</b>
   <%= @place.tel %>
 </p>
-<!-- <p>
-  <b>Price:</b>
-  <%= @place.price %>
-</p>
 
-<p>
-  <b>Days:</b>
-  <%= @place.days %>
-</p>
-
-<p>
-  <b>Hours:</b>
-  <%= @place.hours %>
-</p>
- -->
  
 <!-- Hidden field for Google Maps Address  -->
 
@@ -48,7 +34,6 @@
 
   var geocoder;
   var map;
-  function initialize() {
   	
     geocoder = new google.maps.Geocoder();
     var latlng = new google.maps.LatLng(-34.397, 150.644);
@@ -74,13 +59,10 @@
 	        alert("Geocode was not successful for the following reason: " + status);
 	      }
 	    });
-	}
-
-
 
 </script>
 
-<body onload='initialize()'>	<div id='map_canvas' style='width: 400px; height: 300px; ' ></div> </body>
+<div id='map_canvas' style='width: 400px; height: 300px; ' ></div> 
 
 
 <div data-role="footer" class="ui-bar" data-theme="b">
@@ -88,3 +70,4 @@
 	<%= link_to 'Back to places', places_path %>
 	<%= link_to 'Back to Create Eatvent', neweatvent_path %>
 </div>
+
