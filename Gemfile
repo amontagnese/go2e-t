@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'prototype-rails'
 gem 'jquery-rails'
 gem 'pg'
+gem 'heroku' 
 
 # Gems used only for assets and not required
 # in production environments by default.
