@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(:version => 20111206060318) do
     t.string   "name"
     t.string   "address"
     t.string   "tel"
-    t.decimal  "price"
+    t.decimal  "price",      :precision => 10, :scale => 0
     t.string   "days"
     t.string   "hours"
     t.datetime "created_at"
