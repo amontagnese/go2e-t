@@ -3,22 +3,25 @@
 	<a href="../../" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a>
 </div><!-- /header -->
 
-<p id="notice"><%= notice %></p>
-
-<p>
+	
+<div data-role="content">
+  <ul data-role="listview">
+ <li>
   <b>Name:</b>
   <%= @user.name %>
-</p>
+</li>
 
-<p>
+<li>
   <b>Email:</b>
   <%= @user.email %>
-</p>
+</li>
 
-<p>
+<li>
   <b>Login:</b>
   <%= @user.login %>
-</p>
+</li>
+</ul>
+</div>
 
 
 <div data-role="footer" class="ui-bar" data-theme="b">

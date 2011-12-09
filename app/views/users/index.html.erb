@@ -4,29 +4,16 @@
 </div><!-- /header -->
 
 
-<table width="100%">
-  <tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Login</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @users.each do |user| %>
-  <tr>
-    <td><%= user.name %></td>
-    <td><%= user.email %></td>
-    <td><%= user.login %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
+<div data-role="content">
+  <ul data-role="listview">
+    <% @users.each do |user| %>
+    <li>
+      <%= link_to user.name, user %>
+      <%= link_to 'edit user', edit_user_path(user), "data-icon" => "gear" %>
+    </li>
+    <% end %>
+  </ul>
+</div>
 
 
 <div data-role="footer" class="ui-bar" data-theme="b">

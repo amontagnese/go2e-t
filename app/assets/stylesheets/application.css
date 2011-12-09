@@ -6,3 +6,7 @@
  *= require_tree . 
 */
 
+.editControls
+{
+	width:320px
+}

@@ -3,35 +3,17 @@
 	<a href="../../" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a>
 </div><!-- /header -->
 
+<div data-role="content">
+  <ul data-role="listview">
+    <% @eatvents.each do |eatvent| %>
+    <li>
+      <%= link_to (eatvent.hour.to_s + " @ " + eatvent.where ), eatvent %>
+      <%= link_to 'edit eatvent', edit_eatvent_path(eatvent), "data-icon" => "gear" %>
+    </li>
+    <% end %>
+  </ul>
+</div>
 
-
-<table width="100%">
-  <tr>
-    <th>Creator</th>
-    <th>Place</th>
-    <th>Day</th>
-    <th>Hour</th>
-    <th>People</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @eatvents.each do |eatvent| %>
-  <tr>
-    <td><%= eatvent.creator %></td>
-    <td><%= eatvent.where %></td>
-    <td><%= eatvent.day %></td>
-    <td><%= eatvent.hour %></td>
-    <td><%= eatvent.people %></td>
-    <td><%= link_to 'Show', eatvent %></td>
-    <td><%= link_to 'Edit', edit_eatvent_path(eatvent) %></td>
-    <td><%= link_to 'Destroy', eatvent, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
 <div data-role="footer" class="ui-bar" data-theme="b">
 <%= link_to 'New Eatvent', new_eatvent_path %>
 </div>

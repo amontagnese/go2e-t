@@ -3,35 +3,16 @@
 	<a href="../../" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a>
 </div><!-- /header -->
 
-<table width="100%">
-  <tr>
-    <th>Name</th>
-    <th>Address</th>
-    <th>Tel</th>
-    <!-- <th>Price</th>
-    <th>Days</th>
-    <th>Hours</th> -->
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @places.each do |place| %>
-  <tr>
-    <td><%= place.name %></td>
-    <td><%= place.address %></td>
-    <td><%= place.tel %></td>
-    <td><%= place.price %></td>
-    <td><%= place.days %></td>
-    <td><%= place.hours %></td> 
-    <td><%= link_to 'Show', place %></td>
-    <td><%= link_to 'Edit', edit_place_path(place) %></td>
-    <td><%= link_to 'Destroy', place, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
+<div data-role="content">
+  <ul data-role="listview">
+    <% @places.each do |place| %>
+    <li>
+      <%= link_to place.name, place %>
+      <%= link_to 'edit place', edit_place_path(place), "data-icon" => "gear" %>
+    </li>
+    <% end %>
+  </ul>
+</div>
 
 <div data-role="footer" class="ui-bar" data-theme="b">
 	<%= link_to 'New Place', new_place_path %>
